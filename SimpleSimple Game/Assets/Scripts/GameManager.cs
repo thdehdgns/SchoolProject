@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public int ToDay = 1;
     private string AD = ""; 
     public int DayScore = 0;
+    private bool Week = false;
 
     //약간 최적화하려면 updata에 말고 여기에 함수하나 만들어서 다른 코드에서 그 함수 계속 호출하면되는데 되게 귀찮네
 
@@ -68,7 +69,7 @@ public class GameManager : MonoBehaviour
         {
             //무슨무슨 효과가 있을 예정 ㅇㅇ
         }
-        Sedd.humidityP -= 10;
+        Sedd.humidityP -= random - 5;
         random = Random.Range(10, 25);
         Sedd.freshP += random;
         DayScore += 1;
@@ -103,9 +104,16 @@ public class GameManager : MonoBehaviour
         }
 
 
-        if(ToDay >= 15)
+        if (ToDay % 7 == 0 && Week == true)
         {
-            Time.timeScale = 0f;
+            int random = Random.Range(20, 220);
+            Sedd.freshP -= random;
+            Week = false;
+            Debug.Log(random);
+        }
+        else if(ToDay % 7 != 0)
+        {
+            Week = true;
         }
     }
 }
