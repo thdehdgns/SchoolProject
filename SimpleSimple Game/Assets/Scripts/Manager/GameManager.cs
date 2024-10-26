@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
         }
 
 
-        if (ToDay % 7 == 0 && Week == true)
+        if (ToDay % 7 == 0 && Week == true) //일주일마다 랜덤으로 신선도가 깎이는 시스템
         {
             int random = Random.Range(20, 220);
             Sedd.freshP -= random;

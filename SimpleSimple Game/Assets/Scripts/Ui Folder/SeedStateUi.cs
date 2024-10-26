@@ -11,7 +11,7 @@ public class SeedStateUi : MonoBehaviour
     public TextMeshProUGUI Frash;
     void Start()
     {
-        gamePlay = GameObject.Find("Seed").GetComponent<MainGamePlay>();
+        gamePlay = GameObject.Find("Seed").GetComponent<MainGamePlay>();    
     }
     private void StateUi()
     {
